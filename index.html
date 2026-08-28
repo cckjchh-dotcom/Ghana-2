@@ -21,7 +21,6 @@ body {
     overflow: hidden;
 }
 
-/* BACKGROUND */
 body::before {
     content: "";
     position: fixed;
@@ -69,7 +68,6 @@ body::after {
     }
 }
 
-/* HEADER */
 .logo {
     position: absolute;
     top: 30px;
@@ -83,7 +81,6 @@ body::after {
     color: #f9d616;
 }
 
-/* TITLES */
 h1 {
     font-size: clamp(60px, 9vw, 130px);
     line-height: .95;
@@ -114,7 +111,6 @@ h2 {
     margin-top: 25px;
 }
 
-/* TITLE SLIDE */
 .hero {
     align-items: center;
     justify-content: space-between;
@@ -143,16 +139,19 @@ h2 {
 }
 
 @keyframes float {
-    0%,100% { transform: rotate(4deg) translateY(0); }
-    50% { transform: rotate(4deg) translateY(-15px); }
+    0%,100% {
+        transform: rotate(4deg) translateY(0);
+    }
+    50% {
+        transform: rotate(4deg) translateY(-15px);
+    }
 }
 
-/* CARDS */
 .cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    max-width: 900px;
+    max-width: 950px;
 }
 
 .card {
@@ -180,15 +179,15 @@ h2 {
 
 .card p {
     color: #aaa;
-    margin-top: 5px;
+    margin-top: 7px;
+    line-height: 1.5;
 }
 
-/* CONTENT */
 .content {
-    max-width: 900px;
+    max-width: 1000px;
 }
 
-.content p {
+.content > p {
     color: #bbb;
     font-size: 21px;
     margin-bottom: 15px;
@@ -200,7 +199,6 @@ h2 {
     color: #f9d616;
 }
 
-/* FOOD */
 .food {
     display: flex;
     gap: 30px;
@@ -208,8 +206,8 @@ h2 {
 }
 
 .food-card {
-    width: 260px;
-    height: 220px;
+    width: 270px;
+    min-height: 230px;
     padding: 25px;
     border-radius: 25px;
     background: linear-gradient(145deg, #181818, #0e0e0e);
@@ -220,10 +218,16 @@ h2 {
     font-size: 60px;
 }
 
-/* TIMELINE */
+.food-card p {
+    color: #aaa;
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
 .timeline {
     border-left: 3px solid #f9d616;
     padding-left: 30px;
+    max-width: 800px;
 }
 
 .event {
@@ -238,20 +242,25 @@ h2 {
 
 .event p {
     color: #aaa;
+    margin-top: 5px;
+    line-height: 1.5;
 }
 
-/* FOOTBALL */
 .football {
     font-size: 140px;
     animation: bounce 2s infinite;
+    margin-bottom: 15px;
 }
 
 @keyframes bounce {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
-/* NAVIGATION */
 .navigation {
     position: fixed;
     bottom: 30px;
@@ -293,8 +302,8 @@ button:hover {
     color: #777;
 }
 
-/* MOBILE */
 @media(max-width: 800px) {
+
     .slide {
         padding: 80px 30px;
         overflow-y: auto;
@@ -326,14 +335,17 @@ button:hover {
 <body>
 
 <div class="logo">GHANA<span>.</span></div>
+
 <div class="counter">
     <span id="number">01</span> / 09
 </div>
 
-<!-- 1 -->
+
+<!-- SLIDE 1 -->
 <section class="slide active hero">
 
     <div class="hero-text">
+
         <p class="yellow">WELCOME TO</p>
 
         <h1>
@@ -348,6 +360,7 @@ button:hover {
         <p class="subtitle">
             Geography • Culture • History • People
         </p>
+
     </div>
 
     <div class="flag">★</div>
@@ -355,11 +368,13 @@ button:hover {
 </section>
 
 
-<!-- 2 -->
+<!-- SLIDE 2 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">01 — QUICK FACTS</p>
+
         <h2>Ghana at a glance</h2>
 
         <div class="cards">
@@ -367,246 +382,395 @@ button:hover {
             <div class="card">
                 <div class="icon">🏙️</div>
                 <h3>Capital</h3>
-                <p>Accra</p>
+                <p>
+                    Accra is the capital and one of
+                    the biggest cities in Ghana.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">🌍</div>
-                <h3>Continent</h3>
-                <p>Africa</p>
+                <h3>Location</h3>
+                <p>
+                    Ghana is located in West Africa,
+                    directly next to the Atlantic Ocean.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">🗣️</div>
-                <h3>Official language</h3>
-                <p>English</p>
+                <h3>Language</h3>
+                <p>
+                    English is the official language.
+                    Many local languages are also spoken.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">💰</div>
                 <h3>Currency</h3>
-                <p>Ghanaian Cedi</p>
+                <p>
+                    People use the Ghanaian Cedi
+                    as their national currency.
+                </p>
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
-<!-- 3 -->
+<!-- SLIDE 3 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">02 — GEOGRAPHY</p>
+
         <h2>Where is Ghana?</h2>
 
         <div class="card">
+
             <div class="big-number">🌍</div>
 
             <p>
                 Ghana is located in <b>West Africa</b>.
+                It has a coastline along the Atlantic Ocean.
             </p>
 
             <p>
-                It borders the <b>Atlantic Ocean</b>.
-            </p>
-
-            <p>
-                Neighboring countries are
+                Ghana shares borders with
                 <b>Togo, Burkina Faso</b> and
                 <b>Ivory Coast</b>.
             </p>
+
+            <p>
+                The country has beaches, forests,
+                rivers and large areas of savanna.
+            </p>
+
         </div>
 
     </div>
+
 </section>
 
 
-<!-- 4 -->
+<!-- SLIDE 4 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">03 — THE CAPITAL</p>
+
         <h2>Accra 🏙️</h2>
 
         <div class="cards">
 
             <div class="card">
                 <div class="icon">🌊</div>
+
                 <h3>By the ocean</h3>
-                <p>Accra is located on the coast.</p>
+
+                <p>
+                    Accra lies on the coast of the
+                    Gulf of Guinea.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">👥</div>
-                <h3>Big city</h3>
-                <p>Millions of people live in the city.</p>
+
+                <h3>Large population</h3>
+
+                <p>
+                    Accra is a busy city where
+                    many people live and work.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">💼</div>
+
                 <h3>Business</h3>
-                <p>It is an important economic center.</p>
+
+                <p>
+                    The city is an important center
+                    for business, trade and education.
+                </p>
             </div>
 
             <div class="card">
-                <div class="icon">☀️</div>
-                <h3>Climate</h3>
-                <p>Warm and sunny for much of the year.</p>
+                <div class="icon">🏛️</div>
+
+                <h3>Government</h3>
+
+                <p>
+                    Ghana's government and many
+                    important institutions are located here.
+                </p>
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
-<!-- 5 -->
+<!-- SLIDE 5 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">04 — NATURE</p>
+
         <h2>Nature & Climate 🌴</h2>
 
         <div class="cards">
 
             <div class="card">
                 <div class="icon">🌳</div>
+
                 <h3>Rainforests</h3>
-                <p>Found mainly in the south.</p>
+
+                <p>
+                    Tropical forests can be found
+                    mainly in the southern part of Ghana.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">🌾</div>
+
                 <h3>Savanna</h3>
-                <p>More common in the north.</p>
+
+                <p>
+                    The north is much drier and has
+                    large areas of grassland and savanna.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">☀️</div>
-                <h3>Tropical climate</h3>
-                <p>Ghana is warm all year.</p>
+
+                <h3>Warm climate</h3>
+
+                <p>
+                    Ghana has a tropical climate
+                    and temperatures are usually warm.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">🌧️</div>
-                <h3>Rainy season</h3>
-                <p>Some areas get lots of rain.</p>
+
+                <h3>Rainy seasons</h3>
+
+                <p>
+                    Rainfall changes depending on
+                    the region and the time of year.
+                </p>
             </div>
 
         </div>
+
     </div>
+
 </section>
 
 
-<!-- 6 -->
+<!-- SLIDE 6 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">05 — ECONOMY</p>
+
         <h2>What does Ghana produce? 💰</h2>
 
         <div class="cards">
 
             <div class="card">
                 <div class="icon">🍫</div>
+
                 <h3>Cocoa</h3>
-                <p>One of Ghana's most important products.</p>
+
+                <p>
+                    Cocoa is one of Ghana's most
+                    important agricultural products.
+                    It is used to make chocolate.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">🥇</div>
+
                 <h3>Gold</h3>
-                <p>Ghana is an important gold producer.</p>
+
+                <p>
+                    Gold mining is an important part
+                    of Ghana's economy and exports.
+                </p>
             </div>
 
             <div class="card">
                 <div class="icon">🛢️</div>
+
                 <h3>Oil</h3>
-                <p>Oil is also produced in Ghana.</p>
+
+                <p>
+                    Ghana also produces oil, especially
+                    from fields located offshore.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌾</div>
+
+                <h3>Agriculture</h3>
+
+                <p>
+                    Farming is important and provides
+                    jobs for many people.
+                </p>
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
-<!-- 7 -->
+<!-- SLIDE 7 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">06 — CULTURE</p>
+
         <h2>Food & Culture 🍲</h2>
 
         <div class="food">
 
             <div class="food-card">
+
                 <div class="emoji">🍚</div>
+
                 <h3>Jollof Rice</h3>
-                <p>A very popular West African dish.</p>
+
+                <p>
+                    A popular rice dish cooked with
+                    tomatoes, spices and vegetables.
+                </p>
+
             </div>
 
             <div class="food-card">
+
                 <div class="emoji">🥣</div>
+
                 <h3>Fufu</h3>
-                <p>A traditional Ghanaian food.</p>
+
+                <p>
+                    A traditional food made from
+                    ingredients such as cassava or plantain.
+                </p>
+
             </div>
 
             <div class="food-card">
+
                 <div class="emoji">🥁</div>
-                <h3>Music</h3>
-                <p>Drums, dancing and music are important.</p>
+
+                <h3>Music & Dance</h3>
+
+                <p>
+                    Music, drums and dancing are
+                    important parts of Ghanaian culture.
+                </p>
+
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
-<!-- 8 -->
+<!-- SLIDE 8 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">07 — HISTORY</p>
+
         <h2>A short history 📜</h2>
 
         <div class="timeline">
 
             <div class="event">
+
+                <div class="year">Before 1957</div>
+
+                <p>
+                    Ghana was known as the Gold Coast
+                    and was controlled by Britain.
+                </p>
+
+            </div>
+
+            <div class="event">
+
                 <div class="year">1957</div>
+
                 <p>
-                    Ghana becomes independent from Britain.
+                    Ghana became independent on
+                    March 6, 1957.
                 </p>
+
             </div>
 
             <div class="event">
+
                 <div class="year">Kwame Nkrumah</div>
+
                 <p>
-                    He became the first Prime Minister
-                    and later the first President.
+                    He became the country's first
+                    Prime Minister and later its first President.
                 </p>
+
             </div>
 
             <div class="event">
+
                 <div class="year">Today</div>
+
                 <p>
-                    Ghana is one of the countries in
-                    West Africa with a stable democracy.
+                    Ghana is an independent country
+                    with a democratic government.
                 </p>
+
             </div>
 
         </div>
 
     </div>
+
 </section>
 
 
-<!-- 9 -->
+<!-- SLIDE 9 -->
 <section class="slide">
+
     <div class="content">
 
         <p class="yellow">08 — SPORTS</p>
+
         <h2>Football ⚽</h2>
 
         <div class="card">
@@ -614,7 +778,8 @@ button:hover {
             <div class="football">⚽</div>
 
             <p>
-                Football is the most popular sport in Ghana.
+                Football is the most popular sport
+                in Ghana.
             </p>
 
             <p>
@@ -622,17 +787,31 @@ button:hover {
                 <b class="yellow">Black Stars</b>.
             </p>
 
+            <p>
+                Ghana has represented Africa at
+                several FIFA World Cups.
+            </p>
+
+            <p>
+                Many young people dream of becoming
+                professional football players.
+            </p>
+
         </div>
 
     </div>
+
 </section>
 
 
-<!-- NAVIGATION -->
 <div class="navigation">
+
     <button onclick="previousSlide()">←</button>
+
     <button onclick="nextSlide()">Next →</button>
+
 </div>
+
 
 <div class="progress" id="progress"></div>
 
