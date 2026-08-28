@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentation about Ghana</title>
 
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #222;
+            color: white;
+        }
+
+        .slide {
+            min-height: 100vh;
+            padding: 60px;
+            display: none;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        h1 {
+            font-size: 55px;
+            color: #f4c542;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 40px;
+            color: #f4c542;
+        }
+
+        p, li {
+            font-size: 25px;
+            line-height: 1.5;
+        }
+
+        ul {
+            text-align: left;
+            max-width: 700px;
+        }
+
+        .flag {
+            width: 300px;
+            height: 180px;
+            margin: 20px;
+            background: linear-gradient(
+                to bottom,
+                #ce1126 0%,
+                #ce1126 33%,
+                #fcd116 33%,
+                #fcd116 66%,
+                #006b3f 66%,
+                #006b3f 100%
+            );
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+        }
+
+        .world {
+            font-size: 100px;
+        }
+
+        .buttons {
+            position: fixed;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+        }
+
+        button {
+            background: #f4c542;
+            border: none;
+            padding: 12px 25px;
+            margin: 5px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #d9aa20;
+        }
+
+        .number {
+            position: fixed;
+            top: 15px;
+            right: 20px;
+            color: #aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Slide 1 -->
+    <section class="slide active">
+        <div class="flag">★</div>
+        <h1>Ghana 🇬🇭</h1>
+        <p>A country in West Africa</p>
+        <p>Presentation – 9th Grade</p>
+    </section>
+
+    <!-- Slide 2 -->
+    <section class="slide">
+        <h2>📍 General Information</h2>
+        <ul>
+            <li>Capital: Accra</li>
+            <li>Continent: Africa</li>
+            <li>Language: English</li>
+            <li>Currency: Ghanaian Cedi</li>
+            <li>Population: about 35 million</li>
+        </ul>
+    </section>
+
+    <!-- Slide 3 -->
+    <section class="slide">
+        <h2>🌍 Location</h2>
+        <div class="world">🌍</div>
+        <ul>
+            <li>Ghana is in West Africa</li>
+            <li>It is next to the Atlantic Ocean</li>
+            <li>Neighboring countries:</li>
+            <li>Togo, Burkina Faso and Ivory Coast</li>
+        </ul>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide">
+        <h2>🏙️ The Capital: Accra</h2>
+        <ul>
+            <li>Accra is the capital city</li>
+            <li>It is the biggest city in Ghana</li>
+            <li>It is located near the ocean</li>
+            <li>It is an important business center</li>
+        </ul>
+    </section>
+
+    <!-- Slide 5 -->
+    <section class="slide">
+        <h2>🌴 Nature and Climate</h2>
+        <ul>
+            <li>Ghana has a tropical climate</li>
+            <li>It is warm throughout the year</li>
+            <li>Rainforests are found in the south</li>
+            <li>Savannas are found in the north</li>
+        </ul>
+    </section>
+
+    <!-- Slide 6 -->
+    <section class="slide">
+        <h2>💰 Economy</h2>
+        <ul>
+            <li>Important products: cocoa, gold and oil</li>
+            <li>Ghana produces a lot of cocoa</li>
+            <li>Cocoa is used to make chocolate</li>
+        </ul>
+    </section>
+
+    <!-- Slide 7 -->
+    <section class="slide">
+        <h2>🍲 Food and Culture</h2>
+        <ul>
+            <li>Jollof rice is very popular</li>
+            <li>Fufu is also a traditional food</li>
+            <li>Music and dancing are important</li>
+            <li>Ghana has many different traditions</li>
+        </ul>
+    </section>
+
+    <!-- Slide 8 -->
+    <section class="slide">
+        <h2>⚽ Sports</h2>
+        <ul>
+            <li>Football is very popular</li>
+            <li>The national team is called the "Black Stars" ⭐</li>
+            <li>Ghana has played at several World Cups</li>
+        </ul>
+    </section>
+
+    <!-- Slide 9 -->
+    <section class="slide">
+        <h2>📜 History</h2>
+        <ul>
+            <li>Ghana was a British colony</li>
+            <li>Ghana became independent in 1957</li>
+            <li>Kwame Nkrumah was the first prime minister</li>
+            <li>Later, he became the first president</li>
+        </ul>
+    </section>
+
+    <!-- Slide 10 -->
+    <section class="slide">
+        <h2>👍 Thank You!</h2>
+        <p>Thank you for listening!</p>
+        <p>Do you have any questions?</p>
+        <div class="flag">🇬🇭</div>
+    </section>
+
+    <div class="number">
+        Slide <span id="current">1</span> / 10
+    </div>
+
+    <div class="buttons">
+        <button onclick="previousSlide()">⬅ Previous</button>
+        <button onclick="nextSlide()">Next ➡</button>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        const current = document.getElementById("current");
+
+        function showSlide() {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[currentSlide].classList.add("active");
+            current.textContent = currentSlide + 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide();
+            }
+        }
+
+        function previousSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide();
+            }
+        }
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowRight") {
+                nextSlide();
+            }
+
+            if (event.key === "ArrowLeft") {
+                previousSlide();
+            }
+        });
+    </script>
+
+</body>
+</html>
