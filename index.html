@@ -3,873 +3,711 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ghana 🇬🇭</title>
+<title>Ghana 🇬🇭 — The Gold Coast</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #070707;
-    color: white;
-    overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background: #080808;
+  color: white;
+  overflow-x: hidden;
 }
 
-body::before {
-    content: "";
-    position: fixed;
-    width: 600px;
-    height: 600px;
-    background: #e31b23;
-    filter: blur(180px);
-    opacity: .18;
-    top: -250px;
-    left: -200px;
-}
-
-body::after {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    background: #f9d616;
-    filter: blur(180px);
-    opacity: .12;
-    bottom: -250px;
-    right: -150px;
-}
-
-.slide {
-    position: absolute;
-    inset: 0;
-    display: none;
-    padding: 7vh 9vw;
-    animation: fade .7s ease;
-}
-
-.slide.active {
-    display: flex;
-}
-
-@keyframes fade {
-    from {
-        opacity: 0;
-        transform: translateX(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-.logo {
-    position: absolute;
-    top: 30px;
-    left: 45px;
-    font-weight: 800;
-    font-size: 20px;
-    letter-spacing: 3px;
-}
-
-.logo span {
-    color: #f9d616;
-}
-
-h1 {
-    font-size: clamp(60px, 9vw, 130px);
-    line-height: .95;
-    font-weight: 800;
-}
-
-h2 {
-    font-size: clamp(42px, 5vw, 70px);
-    margin-bottom: 35px;
-    font-weight: 800;
-}
-
-.yellow {
-    color: #f9d616;
-}
-
-.red {
-    color: #e31b23;
-}
-
-.green {
-    color: #168b48;
-}
-
-.subtitle {
-    font-size: 22px;
-    color: #bbb;
-    margin-top: 25px;
+section {
+  min-height: 100vh;
+  padding: 90px 8%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero {
-    align-items: center;
-    justify-content: space-between;
+  background:
+    linear-gradient(135deg, rgba(0,0,0,.78), rgba(0,0,0,.3)),
+    linear-gradient(120deg, #ce1126, #fcd116, #006b3c);
+  text-align: center;
+  overflow: hidden;
 }
 
-.hero-text {
-    max-width: 650px;
+.hero::after {
+  content: "★";
+  position: absolute;
+  font-size: 30rem;
+  color: rgba(0,0,0,.08);
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .flag {
-    width: 430px;
-    height: 260px;
-    border-radius: 20px;
-    background: linear-gradient(
-        #e31b23 0 33%,
-        #f9d616 33% 66%,
-        #168b48 66%
-    );
-    box-shadow: 0 30px 80px rgba(0,0,0,.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 90px;
-    transform: rotate(4deg);
-    animation: float 4s ease-in-out infinite;
+  font-size: 5rem;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
 }
 
-@keyframes float {
-    0%,100% {
-        transform: rotate(4deg) translateY(0);
-    }
-    50% {
-        transform: rotate(4deg) translateY(-15px);
-    }
+h1 {
+  font-size: clamp(4rem, 11vw, 9rem);
+  font-weight: 900;
+  letter-spacing: -5px;
+  text-transform: uppercase;
 }
 
-.cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 950px;
+.hero p {
+  max-width: 800px;
+  margin: 25px auto;
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  backdrop-filter: blur(10px);
+  padding: 12px 22px;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-weight: 700;
+}
+
+.red { background: linear-gradient(135deg,#ce1126,#8d0718); }
+.gold { background: linear-gradient(135deg,#fcd116,#d59f00); color:#111; }
+.green { background: linear-gradient(135deg,#006b3c,#003d23); }
+
+h2 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: 45px;
+  font-weight: 900;
+}
+
+h2 span {
+  color: #fcd116;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 22px;
 }
 
 .card {
-    padding: 25px;
-    border: 1px solid rgba(255,255,255,.12);
-    background: rgba(255,255,255,.06);
-    backdrop-filter: blur(15px);
-    border-radius: 20px;
-    transition: .3s;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 28px;
+  border-radius: 24px;
+  backdrop-filter: blur(12px);
+  transition: .3s ease;
 }
 
 .card:hover {
-    transform: translateY(-7px);
-    border-color: #f9d616;
+  transform: translateY(-8px) scale(1.02);
+  border-color: #fcd116;
+  box-shadow: 0 15px 40px rgba(0,0,0,.35);
 }
 
 .card .icon {
-    font-size: 35px;
-    margin-bottom: 12px;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
 .card h3 {
-    font-size: 22px;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
 }
 
 .card p {
-    color: #aaa;
-    margin-top: 7px;
-    line-height: 1.5;
+  color: #ccc;
+  line-height: 1.65;
 }
 
-.content {
-    max-width: 1000px;
+.number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #fcd116;
+  margin-bottom: 5px;
 }
 
-.content > p {
-    color: #bbb;
-    font-size: 21px;
-    margin-bottom: 15px;
+.dark {
+  background: #0c0c0c;
 }
 
-.big-number {
-    font-size: 100px;
-    font-weight: 800;
-    color: #f9d616;
+.light {
+  background: #111;
 }
 
-.food {
-    display: flex;
-    gap: 30px;
-    flex-wrap: wrap;
-}
-
-.food-card {
-    width: 270px;
-    min-height: 230px;
-    padding: 25px;
-    border-radius: 25px;
-    background: linear-gradient(145deg, #181818, #0e0e0e);
-    border: 1px solid #292929;
-}
-
-.food-card .emoji {
-    font-size: 60px;
-}
-
-.food-card p {
-    color: #aaa;
-    margin-top: 8px;
-    line-height: 1.5;
+.accent {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(252,209,22,.15), transparent 30%),
+    radial-gradient(circle at 80% 80%, rgba(0,107,60,.2), transparent 30%),
+    #090909;
 }
 
 .timeline {
-    border-left: 3px solid #f9d616;
-    padding-left: 30px;
-    max-width: 800px;
+  border-left: 4px solid #fcd116;
+  padding-left: 35px;
+  max-width: 900px;
 }
 
 .event {
-    margin-bottom: 30px;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.event::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #fcd116;
+  border-radius: 50%;
+  left: -44px;
+  top: 5px;
+  box-shadow: 0 0 20px #fcd116;
 }
 
 .year {
-    color: #f9d616;
-    font-size: 25px;
-    font-weight: 700;
+  color: #fcd116;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.event h3 {
+  margin: 5px 0;
+  font-size: 1.5rem;
 }
 
 .event p {
-    color: #aaa;
-    margin-top: 5px;
-    line-height: 1.5;
+  color: #bbb;
+  line-height: 1.6;
 }
 
-.football {
-    font-size: 140px;
-    animation: bounce 2s infinite;
-    margin-bottom: 15px;
+.quote {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 800;
+  max-width: 1000px;
+  line-height: 1.2;
 }
 
-@keyframes bounce {
-    0%,100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-20px);
-    }
+.quote span {
+  color: #fcd116;
 }
 
-.navigation {
-    position: fixed;
-    bottom: 30px;
-    right: 40px;
-    display: flex;
-    gap: 10px;
-    z-index: 10;
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+  margin-top: 20px;
 }
 
-button {
-    background: rgba(255,255,255,.08);
-    color: white;
-    border: 1px solid rgba(255,255,255,.2);
-    padding: 13px 20px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: inherit;
-    transition: .3s;
+.stat {
+  padding: 35px 20px;
+  background: #151515;
+  border-radius: 20px;
+  text-align: center;
 }
 
-button:hover {
-    background: #f9d616;
-    color: black;
+.stat strong {
+  display: block;
+  font-size: 2.8rem;
+  color: #fcd116;
 }
 
-.progress {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    height: 4px;
-    background: #f9d616;
-    transition: .4s;
+.stat small {
+  color: #aaa;
 }
 
-.counter {
-    position: fixed;
-    top: 32px;
-    right: 45px;
-    color: #777;
+footer {
+  padding: 35px;
+  text-align: center;
+  background: #050505;
+  color: #888;
 }
 
-@media(max-width: 800px) {
+nav {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 100;
+  background: rgba(0,0,0,.65);
+  padding: 10px 16px;
+  border-radius: 30px;
+  backdrop-filter: blur(15px);
+}
 
-    .slide {
-        padding: 80px 30px;
-        overflow-y: auto;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 7px;
+  font-size: .8rem;
+  font-weight: 700;
+}
 
-    .hero {
-        flex-direction: column;
-        justify-content: center;
-        gap: 50px;
-    }
+nav a:hover {
+  color: #fcd116;
+}
 
-    .flag {
-        width: 280px;
-        height: 170px;
-    }
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
+@media(max-width:800px) {
+  .stats {
+    grid-template-columns: repeat(2,1fr);
+  }
 
-    .navigation {
-        right: 20px;
-        bottom: 20px;
-    }
+  nav {
+    display: none;
+  }
+
+  section {
+    padding: 70px 6%;
+  }
+}
+
+@media(max-width:500px) {
+  .stats {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="logo">GHANA<span>.</span></div>
+<nav>
+  <a href="#facts">FACTS</a>
+  <a href="#geo">GEOGRAPHY</a>
+  <a href="#history">HISTORY</a>
+  <a href="#culture">CULTURE</a>
+  <a href="#economy">ECONOMY</a>
+  <a href="#sport">SPORT</a>
+</nav>
 
-<div class="counter">
-    <span id="number">01</span> / 09
-</div>
-
-
-<!-- SLIDE 1 -->
-<section class="slide active hero">
-
-    <div class="hero-text">
-
-        <p class="yellow">WELCOME TO</p>
-
-        <h1>
-            GHANA
-            <span class="yellow">🇬🇭</span>
-        </h1>
-
-        <p class="subtitle">
-            A colorful country in West Africa
-        </p>
-
-        <p class="subtitle">
-            Geography • Culture • History • People
-        </p>
-
-    </div>
-
-    <div class="flag">★</div>
-
+<!-- HERO -->
+<section class="hero">
+  <div class="flag">🇬🇭</div>
+  <h1>GHANA</h1>
+  <p>
+    The vibrant heart of West Africa — famous for its history,
+    gold, cocoa, music, football and welcoming culture.
+  </p>
+  <div class="badge">THE GOLD COAST • WEST AFRICA</div>
 </section>
 
+<!-- QUICK FACTS -->
+<section id="facts" class="dark">
+  <h2>Ghana in <span>Numbers</span></h2>
 
-<!-- SLIDE 2 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">01 — QUICK FACTS</p>
-
-        <h2>Ghana at a glance</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">🏙️</div>
-                <h3>Capital</h3>
-                <p>
-                    Accra is the capital and one of
-                    the biggest cities in Ghana.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🌍</div>
-                <h3>Location</h3>
-                <p>
-                    Ghana is located in West Africa,
-                    directly next to the Atlantic Ocean.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🗣️</div>
-                <h3>Language</h3>
-                <p>
-                    English is the official language.
-                    Many local languages are also spoken.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">💰</div>
-                <h3>Currency</h3>
-                <p>
-                    People use the Ghanaian Cedi
-                    as their national currency.
-                </p>
-            </div>
-
-        </div>
-
+  <div class="stats">
+    <div class="stat">
+      <strong>~35M</strong>
+      <small>Population</small>
     </div>
 
-</section>
-
-
-<!-- SLIDE 3 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">02 — GEOGRAPHY</p>
-
-        <h2>Where is Ghana?</h2>
-
-        <div class="card">
-
-            <div class="big-number">🌍</div>
-
-            <p>
-                Ghana is located in <b>West Africa</b>.
-                It has a coastline along the Atlantic Ocean.
-            </p>
-
-            <p>
-                Ghana shares borders with
-                <b>Togo, Burkina Faso</b> and
-                <b>Ivory Coast</b>.
-            </p>
-
-            <p>
-                The country has beaches, forests,
-                rivers and large areas of savanna.
-            </p>
-
-        </div>
-
+    <div class="stat">
+      <strong>238,533</strong>
+      <small>km² of land area</small>
     </div>
 
-</section>
-
-
-<!-- SLIDE 4 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">03 — THE CAPITAL</p>
-
-        <h2>Accra 🏙️</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">🌊</div>
-
-                <h3>By the ocean</h3>
-
-                <p>
-                    Accra lies on the coast of the
-                    Gulf of Guinea.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">👥</div>
-
-                <h3>Large population</h3>
-
-                <p>
-                    Accra is a busy city where
-                    many people live and work.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">💼</div>
-
-                <h3>Business</h3>
-
-                <p>
-                    The city is an important center
-                    for business, trade and education.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🏛️</div>
-
-                <h3>Government</h3>
-
-                <p>
-                    Ghana's government and many
-                    important institutions are located here.
-                </p>
-            </div>
-
-        </div>
-
+    <div class="stat">
+      <strong>Accra</strong>
+      <small>Capital city</small>
     </div>
 
-</section>
+    <div class="stat">
+      <strong>1957</strong>
+      <small>Independence</small>
+    </div>
+  </div>
 
-
-<!-- SLIDE 5 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">04 — NATURE</p>
-
-        <h2>Nature & Climate 🌴</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">🌳</div>
-
-                <h3>Rainforests</h3>
-
-                <p>
-                    Tropical forests can be found
-                    mainly in the southern part of Ghana.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🌾</div>
-
-                <h3>Savanna</h3>
-
-                <p>
-                    The north is much drier and has
-                    large areas of grassland and savanna.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">☀️</div>
-
-                <h3>Warm climate</h3>
-
-                <p>
-                    Ghana has a tropical climate
-                    and temperatures are usually warm.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🌧️</div>
-
-                <h3>Rainy seasons</h3>
-
-                <p>
-                    Rainfall changes depending on
-                    the region and the time of year.
-                </p>
-            </div>
-
-        </div>
-
+  <div class="grid" style="margin-top:25px;">
+    <div class="card">
+      <div class="icon">🗣️</div>
+      <h3>Language</h3>
+      <p>
+        English is the official language. Ghana is also home to many
+        widely spoken local languages including Akan, Ewe, Ga and Dagbani.
+      </p>
     </div>
 
-</section>
-
-
-<!-- SLIDE 6 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">05 — ECONOMY</p>
-
-        <h2>What does Ghana produce? 💰</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="icon">🍫</div>
-
-                <h3>Cocoa</h3>
-
-                <p>
-                    Cocoa is one of Ghana's most
-                    important agricultural products.
-                    It is used to make chocolate.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🥇</div>
-
-                <h3>Gold</h3>
-
-                <p>
-                    Gold mining is an important part
-                    of Ghana's economy and exports.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🛢️</div>
-
-                <h3>Oil</h3>
-
-                <p>
-                    Ghana also produces oil, especially
-                    from fields located offshore.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🌾</div>
-
-                <h3>Agriculture</h3>
-
-                <p>
-                    Farming is important and provides
-                    jobs for many people.
-                </p>
-            </div>
-
-        </div>
-
+    <div class="card">
+      <div class="icon">💰</div>
+      <h3>Currency</h3>
+      <p>
+        Ghana uses the Ghanaian cedi (GHS). The cedi is divided into
+        100 pesewas.
+      </p>
     </div>
 
-</section>
-
-
-<!-- SLIDE 7 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">06 — CULTURE</p>
-
-        <h2>Food & Culture 🍲</h2>
-
-        <div class="food">
-
-            <div class="food-card">
-
-                <div class="emoji">🍚</div>
-
-                <h3>Jollof Rice</h3>
-
-                <p>
-                    A popular rice dish cooked with
-                    tomatoes, spices and vegetables.
-                </p>
-
-            </div>
-
-            <div class="food-card">
-
-                <div class="emoji">🥣</div>
-
-                <h3>Fufu</h3>
-
-                <p>
-                    A traditional food made from
-                    ingredients such as cassava or plantain.
-                </p>
-
-            </div>
-
-            <div class="food-card">
-
-                <div class="emoji">🥁</div>
-
-                <h3>Music & Dance</h3>
-
-                <p>
-                    Music, drums and dancing are
-                    important parts of Ghanaian culture.
-                </p>
-
-            </div>
-
-        </div>
-
+    <div class="card">
+      <div class="icon">🌊</div>
+      <h3>Coastline</h3>
+      <p>
+        Ghana has a coastline along the Gulf of Guinea, part of the
+        Atlantic Ocean.
+      </p>
     </div>
 
+    <div class="card">
+      <div class="icon">☀️</div>
+      <h3>Climate</h3>
+      <p>
+        Ghana has a tropical climate, with temperatures generally
+        remaining warm throughout the year.
+      </p>
+    </div>
+  </div>
 </section>
 
+<!-- GEOGRAPHY -->
+<section id="geo" class="green">
+  <h2>Geography & <span>Nature</span></h2>
 
-<!-- SLIDE 8 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">07 — HISTORY</p>
-
-        <h2>A short history 📜</h2>
-
-        <div class="timeline">
-
-            <div class="event">
-
-                <div class="year">Before 1957</div>
-
-                <p>
-                    Ghana was known as the Gold Coast
-                    and was controlled by Britain.
-                </p>
-
-            </div>
-
-            <div class="event">
-
-                <div class="year">1957</div>
-
-                <p>
-                    Ghana became independent on
-                    March 6, 1957.
-                </p>
-
-            </div>
-
-            <div class="event">
-
-                <div class="year">Kwame Nkrumah</div>
-
-                <p>
-                    He became the country's first
-                    Prime Minister and later its first President.
-                </p>
-
-            </div>
-
-            <div class="event">
-
-                <div class="year">Today</div>
-
-                <p>
-                    Ghana is an independent country
-                    with a democratic government.
-                </p>
-
-            </div>
-
-        </div>
-
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🗺️</div>
+      <h3>Location</h3>
+      <p>
+        Ghana is located in West Africa. It borders Côte d’Ivoire,
+        Burkina Faso and Togo, while the Gulf of Guinea lies to the south.
+      </p>
     </div>
 
-</section>
-
-
-<!-- SLIDE 9 -->
-<section class="slide">
-
-    <div class="content">
-
-        <p class="yellow">08 — SPORTS</p>
-
-        <h2>Football ⚽</h2>
-
-        <div class="card">
-
-            <div class="football">⚽</div>
-
-            <p>
-                Football is the most popular sport
-                in Ghana.
-            </p>
-
-            <p>
-                The national team is called the
-                <b class="yellow">Black Stars</b>.
-            </p>
-
-            <p>
-                Ghana has represented Africa at
-                several FIFA World Cups.
-            </p>
-
-            <p>
-                Many young people dream of becoming
-                professional football players.
-            </p>
-
-        </div>
-
+    <div class="card">
+      <div class="icon">🏔️</div>
+      <h3>Highest Point</h3>
+      <p>
+        Mount Afadja, also known as Afadjato, rises to about 885 metres
+        and is located near Ghana's border with Togo.
+      </p>
     </div>
 
+    <div class="card">
+      <div class="icon">🌊</div>
+      <h3>Lake Volta</h3>
+      <p>
+        Lake Volta is one of the world's largest artificial lakes by
+        surface area and covers a huge part of eastern Ghana.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🐘</div>
+      <h3>Wildlife</h3>
+      <p>
+        Ghana protects forests, savannahs and wetlands that provide
+        habitats for elephants, monkeys, antelopes and many bird species.
+      </p>
+    </div>
+  </div>
 </section>
 
+<!-- ACCRA -->
+<section class="accent">
+  <h2>Welcome to <span>Accra</span></h2>
 
-<div class="navigation">
+  <p class="quote">
+    A fast-growing coastal city where
+    <span>history, business and modern African culture</span>
+    meet.
+  </p>
 
-    <button onclick="previousSlide()">←</button>
+  <div class="grid" style="margin-top:50px;">
+    <div class="card">
+      <div class="icon">🏙️</div>
+      <h3>Capital</h3>
+      <p>
+        Accra is Ghana's capital and one of the country's main economic,
+        political and cultural centres.
+      </p>
+    </div>
 
-    <button onclick="nextSlide()">Next →</button>
+    <div class="card">
+      <div class="icon">🌴</div>
+      <h3>Coastal City</h3>
+      <p>
+        Accra sits on Ghana's Atlantic coast and combines beaches,
+        markets, restaurants and busy urban districts.
+      </p>
+    </div>
 
-</div>
+    <div class="card">
+      <div class="icon">🎨</div>
+      <h3>Creative Scene</h3>
+      <p>
+        Music, fashion, film, art and food have made Accra an influential
+        cultural hub in modern West Africa.
+      </p>
+    </div>
+  </div>
+</section>
 
+<!-- HISTORY -->
+<section id="history" class="dark">
+  <h2>Ghana's <span>History</span></h2>
 
-<div class="progress" id="progress"></div>
+  <div class="timeline">
 
+    <div class="event">
+      <div class="year">Before European rule</div>
+      <h3>Powerful African Kingdoms</h3>
+      <p>
+        The region was home to powerful states and trading societies.
+        The Asante Empire later became one of the most influential
+        political powers in the area.
+      </p>
+    </div>
 
-<script>
+    <div class="event">
+      <div class="year">15th century</div>
+      <h3>European Contact</h3>
+      <p>
+        Portuguese traders reached the coast and established trading
+        connections. European powers later competed for control of
+        coastal trade.
+      </p>
+    </div>
 
-let currentSlide = 0;
+    <div class="event">
+      <div class="year">1821–1957</div>
+      <h3>British Gold Coast</h3>
+      <p>
+        The territory became known as the Gold Coast under British rule.
+        The name reflected the region's long association with gold.
+      </p>
+    </div>
 
-const slides = document.querySelectorAll(".slide");
-const number = document.getElementById("number");
-const progress = document.getElementById("progress");
+    <div class="event">
+      <div class="year">6 March 1957</div>
+      <h3>Independence 🇬🇭</h3>
+      <p>
+        Ghana became independent from British colonial rule.
+        Kwame Nkrumah became the country's first prime minister.
+      </p>
+    </div>
 
-function showSlide() {
+    <div class="event">
+      <div class="year">1960</div>
+      <h3>Republic of Ghana</h3>
+      <p>
+        Ghana became a republic, with Kwame Nkrumah serving as its
+        first president.
+      </p>
+    </div>
 
-    slides.forEach(slide => {
-        slide.classList.remove("active");
-    });
+  </div>
+</section>
 
-    slides[currentSlide].classList.add("active");
+<!-- ECONOMY -->
+<section id="economy" class="gold">
+  <h2>Gold, Cocoa & <span>Business</span></h2>
 
-    number.textContent =
-        String(currentSlide + 1).padStart(2, "0");
+  <div class="grid">
 
-    progress.style.width =
-        ((currentSlide + 1) / slides.length * 100) + "%";
-}
+    <div class="card">
+      <div class="icon">🥇</div>
+      <h3>Gold</h3>
+      <p>
+        Gold has been central to Ghana's economy and history for centuries.
+        Ghana remains one of Africa's major gold-producing countries.
+      </p>
+    </div>
 
-function nextSlide() {
+    <div class="card">
+      <div class="icon">🍫</div>
+      <h3>Cocoa</h3>
+      <p>
+        Ghana is one of the world's major cocoa producers. Cocoa farming
+        supports millions of livelihoods and supplies the global chocolate
+        industry.
+      </p>
+    </div>
 
-    if (currentSlide < slides.length - 1) {
-        currentSlide++;
-        showSlide();
-    }
-}
+    <div class="card">
+      <div class="icon">🛢️</div>
+      <h3>Oil & Gas</h3>
+      <p>
+        Ghana also produces petroleum and natural gas from offshore fields
+        in the Gulf of Guinea.
+      </p>
+    </div>
 
-function previousSlide() {
+    <div class="card">
+      <div class="icon">📈</div>
+      <h3>Growing Economy</h3>
+      <p>
+        Important sectors include agriculture, mining, manufacturing,
+        services, finance, technology and tourism.
+      </p>
+    </div>
 
-    if (currentSlide > 0) {
-        currentSlide--;
-        showSlide();
-    }
-}
+  </div>
+</section>
 
-document.addEventListener("keydown", function(event) {
+<!-- CULTURE -->
+<section id="culture" class="red">
+  <h2>Culture & <span>Traditions</span></h2>
 
-    if (event.key === "ArrowRight") {
-        nextSlide();
-    }
+  <div class="grid">
 
-    if (event.key === "ArrowLeft") {
-        previousSlide();
-    }
+    <div class="card">
+      <div class="icon">🥁</div>
+      <h3>Music</h3>
+      <p>
+        Ghana has influenced African music through styles such as
+        Highlife and Hiplife. Modern Afrobeats has also become globally
+        popular.
+      </p>
+    </div>
 
-});
+    <div class="card">
+      <div class="icon">👗</div>
+      <h3>Kente</h3>
+      <p>
+        Kente is a colourful woven textile strongly associated with
+        Ghanaian heritage, especially among Akan communities.
+      </p>
+    </div>
 
-showSlide();
+    <div class="card">
+      <div class="icon">🍲</div>
+      <h3>Food</h3>
+      <p>
+        Popular dishes include jollof rice, fufu, banku, waakye,
+        kenkey and red-red.
+      </p>
+    </div>
 
-</script>
+    <div class="card">
+      <div class="icon">🎉</div>
+      <h3>Festivals</h3>
+      <p>
+        Festivals such as Homowo, Akwasidae and Hogbetsotso celebrate
+        history, community, traditions and ancestors.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SPORTS -->
+<section id="sport" class="dark">
+  <h2>Football & the <span>Black Stars</span></h2>
+
+  <div class="card" style="max-width:1000px;">
+    <div class="icon">⚽</div>
+    <h3>Ghana's National Team</h3>
+    <p>
+      The Ghana national football team is nicknamed the
+      <strong>Black Stars</strong>, inspired by the Black Star of Africa.
+      Ghana has won the Africa Cup of Nations four times and has become
+      one of Africa's best-known football nations.
+    </p>
+  </div>
+
+  <div class="grid" style="margin-top:25px;">
+    <div class="card">
+      <div class="number">4×</div>
+      <h3>AFCON Champions</h3>
+      <p>
+        Ghana has won the Africa Cup of Nations four times.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="number">2006</div>
+      <h3>World Cup Debut</h3>
+      <p>
+        Ghana qualified for its first FIFA World Cup in Germany.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="number">2010</div>
+      <h3>Historic Run</h3>
+      <p>
+        Ghana reached the quarter-finals of the World Cup in South Africa.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FUN FACTS -->
+<section class="accent">
+  <h2>Did You <span>Know?</span></h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <div class="icon">⭐</div>
+      <h3>The Black Star</h3>
+      <p>
+        The black star on Ghana's flag represents African freedom and
+        the country's role in the Pan-African movement.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🌍</div>
+      <h3>Pan-African Symbol</h3>
+      <p>
+        Ghana became an important symbol of African independence after
+        becoming the first sub-Saharan African colony to gain independence
+        in the post-war era.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🍫</div>
+      <h3>Chocolate Connection</h3>
+      <p>
+        Cocoa is one of Ghana's most important agricultural exports and
+        is a key ingredient in chocolate produced around the world.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏰</div>
+      <h3>Historic Forts</h3>
+      <p>
+        Ghana's coastline contains historic forts and castles connected
+        to centuries of European trade and the transatlantic slave trade.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- END -->
+<section class="hero">
+  <div class="flag">🇬🇭</div>
+  <h2 style="font-size:clamp(3rem,8vw,7rem);">
+    AKWAABA
+  </h2>
+  <p>
+    “Akwaaba” is a commonly used Ghanaian expression meaning
+    <strong>“Welcome.”</strong>
+  </p>
+  <div class="badge">THANK YOU FOR EXPLORING GHANA</div>
+</section>
+
+<footer>
+  <p>🇬🇭 Ghana — The Gold Coast • Culture • History • Nature • Future</p>
+</footer>
 
 </body>
 </html>
